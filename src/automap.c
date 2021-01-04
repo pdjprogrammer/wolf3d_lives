@@ -102,8 +102,8 @@ void AM_DrawAutomap(bool transparent)
 				if(CurMapData.tile_info[x][ymap] & TILE_IS_SECRET && show_secrets->value != 0)
 					glColor4ub(255, 255, 128, map_alpha);
 				else if(CurMapData.tile_info[x][ymap] & TILE_IS_ELEVATOR)
-					//glColor4ub(255, 255, 0, map_alpha);
-					glColor4ub(255, 0, 255, map_alpha);
+						//glColor4ub(255, 255, 0, map_alpha);
+						glColor4ub(255, 0, 255, map_alpha);
 				else
 					glColor4ub(255, 128, 128, map_alpha);
 				glVertex2i(MAPXSTART + (x << MAPSHIFT),
@@ -118,7 +118,10 @@ void AM_DrawAutomap(bool transparent)
 		else
 		{
 			//	Floor
-			glColor4ub(0, 0, 0, map_alpha);
+			if(CurMapData.tile_info[x][ymap] & TILE_IS_SLEVEL)
+				glColor4ub(0, 255, 0, map_alpha);
+			else
+				glColor4ub(0, 0, 0, map_alpha);
 			glVertex2i(MAPXSTART + (x << MAPSHIFT),
 				MAPYSTART + ((y + 1) << MAPSHIFT));
 			glVertex2i(MAPXSTART + (x << MAPSHIFT),
