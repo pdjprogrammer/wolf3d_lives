@@ -4,7 +4,7 @@ A fork of NewWolfLives, where I am trying to cleanup and tinker with the old cod
 
 How to build the sources
 ------------------------
-Install Microsoft Visual Studio 2017 {Make sure to install Windows XP Support for C++}&nbsp
+Install Microsoft Visual Studio 2017 {Make sure to install Windows XP Support for C++} </br>
 Install cmake {Make sure it's >= version 3.18}
 
 1. Create a directory named "build" within the root directory of source files.
