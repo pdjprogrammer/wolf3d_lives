@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.18)
 
-set(PROJECT_NAME Wolf3DLives)
+set(PROJECT_NAME wolf3d_lives)
 project(${PROJECT_NAME})
 
 set(VENDOR_ROOT libs)
