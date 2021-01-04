@@ -1,22 +1,17 @@
-#include "Audiowl6.h"
+#include "audiowl6.h"
 
-// sound channels
-// channel 0 never willingly overrides
-// other channels (1-7) allways override a playing sound on that channel
-#define CHAN_AUTO			-1
-#define CHAN_PWEAPON	 0
-#define CHAN_WEAPON		 1
-#define CHAN_VOICE		 2
-#define CHAN_ITEM			 3
-#define CHAN_BODY			 4
-#define CHAN_LOCAL		 5
-// number first avail channel for CHAN_AUTO mode
-#define CHAN_FIRST		 6
+#define CHAN_AUTO		-1
+#define CHAN_PWEAPON	0
+#define CHAN_WEAPON		1
+#define CHAN_VOICE		2
+#define CHAN_ITEM		3
+#define CHAN_BODY		4
+#define CHAN_LOCAL		5
+#define CHAN_FIRST		6
 
 typedef struct
 {
-	int length; // in bytes
-	//char name[MAX_WLPATH];
+	int length;
 	int name;
 	byte *data;
 } cache_snd;
@@ -31,6 +26,7 @@ typedef struct
 	digi_t digi;
 	mus_t mus;
 } snd_mode;
+
 extern snd_mode SD_mode;
 
 void SD_SetSoundLoc(int gx, int gy);
@@ -40,7 +36,6 @@ cache_snd *SD_CacheSND(int name);
 void SD_UnCacheSnd(int name);
 void SD_UnCacheAllSnds(void);
 void SD_InitDigiMap(void);
-
 void SD_PlayImf_f(void);
 
 extern void SD_StopMusic(void);
@@ -54,6 +49,5 @@ extern int SD_Init(void);
 extern void SD_Config(int option, int setting);
 extern void SD_ShutDown(void);
 
-
 #define	PlaySoundLocTile(s, chn, tx, ty)	SD_PlaySound3D(s, chn, TILE2POS(tx), TILE2POS(ty))
-#define	PlaySoundLocActor(s, chn, ob)			SD_PlaySound3D(s, chn, (ob)->x, (ob)->y)
+#define	PlaySoundLocActor(s, chn, ob)		SD_PlaySound3D(s, chn, (ob)->x, (ob)->y)
